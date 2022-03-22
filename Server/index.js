@@ -57,7 +57,7 @@ app.put('/todos/:id', async (req, res) => {
 		const { id } = req.params;
 		const { description } = req.body;
 		const updateTodo = await pool.query(
-			'UPDATE todo SET description = $1 WHERE todo_id = $2',
+			'UPDATE todo SET description = $1 WHERE todo_id = $2 RETURNING *',
 			[description, id]
 		);
 
@@ -73,7 +73,7 @@ app.delete('/todos/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
 		const detleteTodo = await pool.query(
-			'DELETE FROM todo WHERE todo_id = $1',
+			'DELETE FROM todo WHERE todo_id = $1 RETURNING *',
 			[id]
 		);
 		res.json('To do was deleted');
