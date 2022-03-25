@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS perntodo;
+
 CREATE DATABASE perntodo;
 
 CREATE TABLE todo(

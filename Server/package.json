@@ -4,7 +4,8 @@
 	"description": "Postgres, Express, React and Node to do list.",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"setup-db": "node db.js"
 	},
 	"repository": {
 		"type": "git",
