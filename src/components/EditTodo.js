@@ -62,7 +62,7 @@ export default function EditTodo({ todo }) {
 								data-bs-dismiss='modal'
 								onClick={(e) => updateDescription(e)}
 							>
-								Edit
+								Save
 							</button>
 							<button
 								type='button'
