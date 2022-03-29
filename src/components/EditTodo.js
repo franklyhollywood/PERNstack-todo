@@ -9,7 +9,7 @@ export default function EditTodo({ todo }) {
 		try {
 			const body = { description };
 			const response = await fetch(
-				`http://localhost:7890/todos/${todo.todo_id}`,
+				`https://pern-todo.herokuapp.com/todos/${todo.todo_id}`,
 				{
 					method: 'PUT',
 					headers: { 'Content-Type': 'application/json' },

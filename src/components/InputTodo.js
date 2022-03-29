@@ -7,7 +7,7 @@ export default function InputTodo() {
 		e.preventDefault();
 		try {
 			const body = { description };
-			const response = await fetch('http://localhost:7890/todos', {
+			const response = await fetch('https://pern-todo.herokuapp.com/todos', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(body),

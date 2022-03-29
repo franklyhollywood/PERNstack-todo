@@ -7,9 +7,12 @@ export default function ListTodos() {
 	//delete function
 	const deleteTodo = async (id) => {
 		try {
-			const deteleTodo = await fetch(`http://localhost:7890/todos/${id}`, {
-				method: 'DELETE',
-			});
+			const deteleTodo = await fetch(
+				`https://pern-todo.herokuapp.com/todos/${id}`,
+				{
+					method: 'DELETE',
+				}
+			);
 			setTodos(todos.filter((todo) => todo.todo_id !== id));
 		} catch (error) {
 			console.error(error.message);
@@ -19,7 +22,7 @@ export default function ListTodos() {
 	useEffect(() => {
 		const getTodos = async () => {
 			try {
-				const response = await fetch('http://localhost:7890/todos');
+				const response = await fetch('https://pern-todo.herokuapp.com/todos');
 				const jsonData = await response.json();
 
 				setTodos(jsonData);
