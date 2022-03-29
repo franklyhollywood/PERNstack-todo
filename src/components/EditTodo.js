@@ -8,14 +8,11 @@ export default function EditTodo({ todo }) {
 		e.preventDefault();
 		try {
 			const body = { description };
-			const response = await fetch(
-				`https://pern-todo.herokuapp.com/todos/${todo.todo_id}`,
-				{
-					method: 'PUT',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify(body),
-				}
-			);
+			await fetch(`https://pern-todo.herokuapp.com/todos/${todo.todo_id}`, {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(body),
+			});
 			window.location = '/';
 		} catch (error) {
 			console.error(error.message);

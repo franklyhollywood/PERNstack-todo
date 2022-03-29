@@ -7,12 +7,9 @@ export default function ListTodos() {
 	//delete function
 	const deleteTodo = async (id) => {
 		try {
-			const deteleTodo = await fetch(
-				`https://pern-todo.herokuapp.com/todos/${id}`,
-				{
-					method: 'DELETE',
-				}
-			);
+			await fetch(`https://pern-todo.herokuapp.com/todos/${id}`, {
+				method: 'DELETE',
+			});
 			setTodos(todos.filter((todo) => todo.todo_id !== id));
 		} catch (error) {
 			console.error(error.message);
